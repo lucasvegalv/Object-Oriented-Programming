@@ -1,12 +1,10 @@
 // Punto 1
 public class Persona {
 
-  // TO DO: To Strings - Getters & Setters Cuenta
-
   // Atributos
   private String nombre;
   private String apellido;
-  private final int DNI;
+  private int numDocumento;
 
   // Getters
   public String getNombre() {
@@ -17,8 +15,8 @@ public class Persona {
     return apellido;
   }
 
-  public int getDNI() {
-    return DNI;
+  public int getnumDocumento() {
+    return numDocumento;
   }
 
   // Setters
@@ -26,22 +24,24 @@ public class Persona {
     this.nombre = nombre;
   }
 
-  public void setNombre(String apellido) {
+  public void setApellido(String apellido) {
     this.apellido = apellido;
   }
 
-  public void setNombre(int DNI) {
-    this.DNI = DNI;
+  public void setNumDocumento(int numDocumento) {
+    this.numDocumento = numDocumento;
   }
 
   // To String
-
+  public String toString(){
+    return (nombre + " - " + apellido + " - " + numDocumento)
+  }
 
   // Constructor
-  public Persona(String nombre, String apellido, int DNI) {
+  public Persona(String nombre, String apellido, int numDocumento) {
     this.nombre = nombre;
     this.apellido = apellido;
-    this.DNI = DNI;
+    this.numDocumento = numDocumento;
   }
 }
 
@@ -54,20 +54,42 @@ public class Cuenta {
   private boolean esActivo;
 
   // Getters
-  public Persona getTitular(int DNI) {
-    return (titular, saldo,)
+  public Persona getTitular() {
+    return titular;
+  }
+
+  public float getSaldo(){
+    return saldo;
+  }
+
+  public boolean esActivo() {
+    return esActivo;
+  }
+
+  // Setters
+public void setTitular(Persona titular){
+  this.titular = titular;
+}
+
+  public void setSaldo(float saldo){
+    this.saldo = saldo;
+  }
+
+  public void setEsActivo(boolean esActivo){
+    this.esActivo = esActivo;
   }
 
   // Constructor: Titular y saldo obligatorio
   public Cuenta (Persona titular, float saldo) {
     this.titular = titular;
     this.saldo = saldo;
-    esActivo = true;
+    this.esActivo = true;
   }
 
   // Constructor: Titular obligatorio
   public Cuenta (Persona titular) {
   this.titular = titular;
-  esActivo = true;
+  this.saldo = 0;
+  this.esActivo = true;
   }
 }
