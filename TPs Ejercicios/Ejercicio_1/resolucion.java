@@ -34,7 +34,7 @@ public class Persona {
 
   // To String
   public String toString(){
-    return (nombre + " - " + apellido + " - " + numDocumento)
+    return (nombre + " - " + apellido + " - " + numDocumento);
   }
 
   // Constructor
@@ -77,6 +77,20 @@ public void setTitular(Persona titular){
 
   public void setEsActivo(boolean esActivo){
     this.esActivo = esActivo;
+  }
+
+  // To String
+  public String toString(){
+    String cuentaActivada;
+
+    if(esActivo == true) {
+      cuentaActivada = "Activo";
+    }
+    else {
+      cuentaActivada = "Inactivo";
+    }
+
+    return (titular + " - $" + saldo + " - " + cuentaActivada);
   }
 
   // Constructor: Titular y saldo obligatorio
