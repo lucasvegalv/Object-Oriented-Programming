@@ -1,6 +1,8 @@
 // Punto 1
 public class Persona {
 
+  // TO DO: To Strings - Getters & Setters Cuenta
+
   // Atributos
   private String nombre;
   private String apellido;
