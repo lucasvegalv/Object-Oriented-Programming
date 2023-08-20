@@ -1,4 +1,5 @@
 package Classes;
+import Classes.Persona;
 
 public class Cuenta {
 
