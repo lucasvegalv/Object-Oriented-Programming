@@ -1,6 +1,4 @@
-
-// Punto 2
-import \Ejercicio_1.Persona;
+package Classes;
 
 public class Cuenta {
 
