@@ -1,5 +1,4 @@
 package Classes;
-import Classes.Persona;
 import java.util.Scanner;
 
 public class Cuenta {
@@ -19,22 +18,23 @@ public class Cuenta {
   }
 
   // Metodo para retirar dinero de la cuenta
-  
   public void retirar(double importe) {
     
-    if(importe > 0){
+    if((this.saldo - importe) >= 0){
       this.saldo -= importe;
-    } else { // Si el importe es igual o menor a cero ofrecemos retirar todo o cancelar el retiro
-      System.out.print("Quiere retirar el saldo existente o cancelar el retiro? R (retirar) - C (cancelar)");
+      System.out.print("Retiro realizado con exito. Su saldo actualizado es de $" + this.saldo);
+    } else { // Si el resultado del importe es menor a cero ofrecemos retirar todo o cancelar el retiro
+      System.out.print("Esta queriendo retirar mas de lo disponible. Quiere retirar el saldo existente o cancelar el retiro? R (retirar) - C (cancelar) ");
       String respuesta = scanner.nextLine();
       
-      while(respuesta != "R" || respuesta != "C") { // Solicitamos respuesta hasta que ingrese lo solicitado
-        System.out.print("Quiere retirar el saldo existente o cancelar el retiro? R (retirar) - C (cancelar)");
+      while(!respuesta.equalsIgnoreCase("R") && !respuesta.equalsIgnoreCase("C")) { // Solicitamos respuesta hasta que ingrese lo solicitado
+        System.out.print("Por favor, indique que opcion quiere: R (retirar saldo existente) - C (cancelar operacion) ");
         respuesta = scanner.nextLine();
       }
 
-      if(respuesta == "R") {
+      if(respuesta.equalsIgnoreCase("R")) {
         this.saldo = 0;
+        System.out.print("Retiro realizado con exito. Su saldo actualizado es de $" + this.saldo);
       } else {
         System.out.print("Retiro cancelado");
       }
@@ -48,12 +48,12 @@ public class Cuenta {
       System.out.print("El monto es mayor al saldo disponible. Quiere transferirlo todo o cancelar la operacion? T (transferir) - C (cancelar)");
       String respuesta = scanner.nextLine();
 
-      while(respuesta != "T" || respuesta != "C") {
-        System.out.print("El monto es mayor al saldo disponible. Quiere trasnferirlo todo o cancelar la operacion? T (transferir) - C (cancelar)");
+      while(!respuesta.equalsIgnoreCase("T") && !respuesta.equalsIgnoreCase("C")) {
+        System.out.print("Por favor, indique que opcion quiere: T (transferir) - C (cancelar)");
         respuesta = scanner.nextLine();
       }
 
-      if(respuesta == "T") {
+      if(respuesta.equalsIgnoreCase("T")) {
         destino.saldo += this.saldo;
       } else {
         System.out.print("Operacion cancelada");
@@ -77,7 +77,7 @@ public class Cuenta {
   }
 
   // Setters
-public void setTitular(Persona titular){
+  public void setTitular(Persona titular){
   this.titular = titular;
 }
 
@@ -116,4 +116,5 @@ public void setTitular(Persona titular){
   this.saldo = 0;
   this.esActivo = true;
   }
+
 }
