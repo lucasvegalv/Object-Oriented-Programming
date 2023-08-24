@@ -1,0 +1,53 @@
+CONSIGNA 2c
+
+Generar una clase Utilidades2c.java para ayudar a Bob: 
+
+Bob es un pintor de paredes y necesita tu ayuda. Tenés que escribir un programa que ayude a Bob a calcular cuántas latas de pintura necesita comprar, antes de ir a trabajar. Podés usar cualquier método que hayas programado antes en cualquiera de los ejercicios previos. 
+
+Importante saber: Bob puede tener algunas latas adicionales en casa. Adicionalmente, Bob conoce el área que puede cubrir con una lata de pintura. 
+
+Para ayudar a Bob hace lo siguiente: 
+
+1.Escribí un método llamado saberCuantasLatas con 4 parámetros.  
+  - El primer parámetro debe llamarse ancho de tipo double. Este parámetro representa el ancho de la pared a pintar. 
+  - El  segundo  parámetro  debe  llamarse altura  de  tipo double.  Este  parámetro representa la altura de la pared. 
+  - El tercer parámetro debe llamarse areaPorLata y representa el área que se puede cubrir con una lata de pintura. 
+  - El cuarto parámetro debe llamarse latasExtra. Este parámetro representa el conteo de latas que Bob tiene en casa. Este método deberá retornar un valor de tipo int que represente la cantidad de latas que Bob necesita comprar antes de ir a trabajar. Para calcular el número de latas, consultá las notas a continuación: 
+    a. Si uno de los parámetros ancho, altura o areaPorLata es menor o igual a 0 o si latasExtra es menor que 0, el método debe devolver -1 para indicar un valor no válido. 
+    b. Si todos los parámetros son válidos, el método deberá calcular el número de latas y devolverlo. 
+    
+Ejemplos de entrada/salida: 
+
+saberCuantasLatas(-3.4, 2.1, 1.5, 2);  // debería retornar -1 ya que el parámetro de ancho no es válido 
+
+saberCuantasLatas (3.4, 2.1, 1.5, 2);  // debe devolver 3 ya que el área de la pared es 7,14, un solo lata puede cubrir un área de 1,5 y Bob tiene 2 latas extra en casa. 
+
+saberCuantasLatas (2.75, 3.25, 2.5, 1);  // debe devolver 3 ya que el área de la pared es 8.9375, un solo lata puede cubrir un área de 2.5 y Bob tiene 1 lata extra en casa. 
+
+2. A Bob no le gusta ingresar 0 para el parámetro latasExtra, por lo que necesita otro método. Escribí otro método sobrecargado llamado saberCuantasLatas con 3 parámetros, a saber, ancho, altura y areaPorLata (todos de tipo doble). Este método deberá retornar un valor de tipo int que represente la cantidad de latas que Bob necesita comprar antes de ir a trabajar. Para calcular el número de latas, consultá las notas a continuación. 
+
+  - Si uno de los parámetros ancho, altura o areaPorLata es menor o igual a 0, el método debe devolver -1 para indicar un valor no válido. 
+  - Si todos los parámetros son válidos, el método necesita calcular el número de latas y devolverlo. 
+  
+Ejemplos de entrada/salida: 
+
+saberCuantasLatas(-3.4, 2.1, 1.5);  // debería devolver -1 ya que el parámetro de ancho no es válido 
+
+saberCuantasLatas(3.4, 2.1, 1.5);  // debe devolver 5 ya que el área de la pared es 7.14, y un solo lata puede cubrir un área de 1.5. 
+
+saberCuantasLatas(7.25, 4.3, 2.35);  // debe devolver 14 ya que el área de la pared es 31.175, y un solo lata puede cubrir un área de 2.35. 
+
+3.En algunos casos, Bob no conoce el ancho ni la altura de la pared, pero conoce el área de la pared. Escribí otro método sobrecargado llamado saberCuantasLatas con 2 parámetros, a saber, area y areaPorLata (ambos de tipo double). El método deberá retornar un valor de tipo int que represente la cantidad de latas que Bob necesita comprar antes de ir a trabajar. Para calcular el número de latas, consultá las notas a continuación: 
+  - Si uno de los parámetros area o areaPorLata es menor o igual a 0, el método deberá devolver -1 para indicar un valor no válido. 
+  - Si todos los parámetros son válidos, el método retornará el número de latas. 
+  
+Ejemplos de entrada/salida: 
+  - saberCuantasLatas(3.4, 1.5);  // debe devolver 3 ya que el área es 3.4 y un solo lata puede cubrir un área de 1.5 
+  - saberCuantasLatas(6.26, 2.2);  // debe devolver 3 ya que el área de la pared es 6.26 y un solo lata puede cubrir un área de 2.2. 
+  - saberCuantasLatas(3.26, 0.75); // debe devolver 5 ya que el área de la pared es 3.26, y un solo lata puede cubrir un área de 0.75 
+  
+4.Creá todos los diagramas de clase y objetos utilizados en PlantUML, exportalos en una imagen y entregalos con este ejercicio. 
+
+5.Incluí en el programa Main.java todo lo necesario para lograr ver si los ejemplos se cumplen. Hacé tu mejor esfuerzo para ayudar a Bob! 
+
+NOTA: Usá el método Math.ceil() para redondear el número de latas calculados (double) y luego convertilo en un int antes de devolver el valor de los métodos.

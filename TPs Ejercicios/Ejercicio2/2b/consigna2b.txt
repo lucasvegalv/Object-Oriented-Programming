@@ -1,0 +1,24 @@
+CONSIGNA 2b
+
+Generá una clase Utilidades2b.java y en la misma: 
+
+1.Escribí un método llamado area con un parámetro de tipo double llamado radio. El método retornará un valor double que representará el área de un círculo. Si el radio del parámetro es negativo, devuelve -1.0 para representar un valor no válido. 
+
+2.Escribí otro método sobrecargado con 2 parámetros x e y (ambos double), donde x e y representan los lados de un rectángulo. El método deberá retornar el área de un rectángulo. Si uno o ambos parámetros son negativos, devuelve -1.0 para indicar un valor no válido. 
+
+3.Creá todos los diagramas de clases y objetos utilizando PlantUML. Exportá el resultado en una imagen y agregalo a lo entregado con este ejercicio. 
+
+4.Incluí en el programa Main.java los siguientes ejemplos: 
+  a.Rectángulo de base = 3.4 y altura=2.2 
+  b.Círculo de radio 3.2 
+  c.Cuadrado de 2,5 de lado 
+  d.Círculos y rectángulos inválidos 
+  
+Ejemplos de entrada/salida: 
+  area (5.0); //debe devolver 78.53975 
+  area(-1); //debería devolver -1 ya que el parámetro es negativo 
+  area (5.0, 4.0); //debe devolver 20.0 (5 * 4 = 20) 
+  area (-1.0, 4.0); //debería devolver -1. El primer parámetro es negativo 
+
+CONSEJO: La fórmula para calcular el área de un rectángulo es x * y. 
+CONSEJO: La fórmula para calcular el área de un círculo es radio * radio * PI. 

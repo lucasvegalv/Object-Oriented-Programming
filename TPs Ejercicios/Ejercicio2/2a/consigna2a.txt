@@ -1,0 +1,51 @@
+CONSIGNA 2a
+
+En una clase llamada Utilidades2a.java, diseñe y programe en Java los siguientes métodos, utilizando los modificadores de acceso más adecuados en cada caso. Adicionalmente, cree todos los atributos que sean necesarios para completar el ejercicio, también considerando cuál será la visibilidad apropiada de los mismos. 
+
+1. aMillasPorHora:
+Escribí un método llamado aMillasPorHora que servirá para convertir un valor dado en KM/h  a  Mi/h.  El  método  tendrá  1  parámetro  de  tipo double  con  el  nombre kilometrosPorHora. Este método retornará el valor redondeado del cálculo en un tipo long.  
+
+Si el argumento kilometrosPorHora es inferior a 0, el método aMillasPorHora, retornar -1 para indicar un valor no válido. De lo contrario, si es positivo, calcular y devolver el valor de millas por hora. Para conversión y redondeo, verificá las notas en el punto 3 al final del enunciado. 
+
+Ejemplos de entrada/salida: 
+  aMillasPorHora (1.5); // debería devolver el valor 1 
+  aMillasPorHora (-5.6); // debería devolver el valor -1 
+  aMillasPorHora (25.42); // debe devolver el valor 16 aMillasPorHora (75.114); // debería devolver el valor 47 
+
+2.imprimirConversion 
+Escribí otro método llamado imprimirConversion con 1 parámetro de tipo doble con el nombre kilometrosPorHora. Este método no retornará valores (vacío) y necesita calcular millas por hora, a partir del parámetro kilometrosPorHora. 
+
+Imprimir el mensaje en el siguiente formato: "XX km/h = YY mi/h". 
+  - XX representa el valor original kilómetros por hora. 
+  - YY representa las millas por hora redondeadas del parámetro de kilómetros por hora. 
+  
+Si el parámetro kilometrosPorHora es < 0, imprima el texto "Valor no válido". 
+
+Ejemplos de entrada/salida: 
+  imprimirConversion(1.5); // debe imprimir: 1,5 km/h = 1 mi/h 
+  imprimirConversion(10.25); // debe imprimir: 10,25 km/h = 6 mi/h 
+  imprimirConversion(-5.6); // debe imprimir: Valor no válido 
+  
+NOTA:  Utilizá  el  método Math.round()  para  redondear  el  número  de  millas  por  hora calculadas (el doble). El método round devuelve long. También podés utilizar Math.ceil()para redondear hacia arriba. 
+
+3.¿Cómo utilizar el método round y cómo funciona? 
+Math.round() es un método matemático incorporado que devuelve el largo más cercano al argumento. El resultado se redondea a un número entero sumando 1/2, tomando el piso del resultado después de sumar 1/2 y encasillando el resultado en tipo long. El método devuelve el valor del argumento redondeado al valor int más cercano. 
+
+EJEMPLO DE USO (Sugerencias para el main): 
+  double numero = 1,5; 
+  long redondeado = Math.round(numero); 
+  System.out.println("redondeado = " + redondeado); 
+  System.out.println("con 3.9 = " + Math.round(3.9)); 
+  System.out.println("con 4.5 = " + Math.round(4.5)); 
+  int suma = 45; 
+  int cuenta = 10; 
+  double promedio = (double) suma / cuenta; 
+  long promedioRedondeado = Math.round(promedio); 
+  System.out.println("promedio = " + promedio); 
+  System.out.println("Promedio Redondeado = " + promedioRedondeado); 
+  
+  4. PlantUML 
+  Diseñá las clases y objetos creados para el ejercicio utilizando PlantUML (https://plantuml.com). Exportá el resultado en una imagen PNG para entregar con el ejercicio. 
+  
+  5.Main 
+  Creá un programa Main.java para probar todos los métodos y verificar que funcionan según lo esperado, con los mismos valores propuestos en los ejemplos. NOTA: 1 milla por hora son 1,609 kilómetros por hora.
