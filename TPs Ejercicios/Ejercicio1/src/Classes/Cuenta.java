@@ -1,5 +1,6 @@
 package Classes;
 import java.util.Scanner;
+import Classes.Persona;
 
 public class Cuenta {
 
