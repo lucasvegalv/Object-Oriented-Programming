@@ -36,7 +36,6 @@ public class Cliente {
 	// To String
 	public String toString() {
 	    String respuesta = (this.dni + " - " + this.nombre + " - " + this.apellido);
-	    System.out.print(respuesta);
 	    return respuesta;
 	}
 	

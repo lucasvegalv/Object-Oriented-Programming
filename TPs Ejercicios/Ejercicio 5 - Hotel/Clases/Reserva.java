@@ -18,7 +18,8 @@ public class Reserva {
 	// Vamos a usar este arreglo para almacenar cada una una de las reservas y asi, despues, poder iterarlas y buscar habitaciones disponibles, cambiar estados, agregar nuevas, calcular importes, etc.
 	public static Reserva[] reservarArr = new Reserva[100]; 
 	
-	int idReserva = 0;
+	static int contador = 0;
+	int idReserva;
 	Cliente cliente;
 	Habitacion habitacion;
 	Date fechaComienzo;
@@ -62,16 +63,15 @@ public class Reserva {
 	}
 	
 	// To String
+	@Override
 	public String toString() {
-	    String respuesta = (this.cliente.nombre + this.cliente.apellido + " - Nro habitacion: " + this.habitacion.numero + " - Importe: " + this.importeTotal);
-	    System.out.print(respuesta);
+	    String respuesta = (cliente.nombre + " " + cliente.apellido + " - N° habitación: #" + habitacion.numero + " - Importe: $" + importeTotal + " ($" + habitacion.precio + " * " + cantDias + " días).");
 	    return respuesta;
 	}
-	
-	
+
 	// Constructor para crear/agregar una nueva reserva
 	public Reserva(Cliente cliente, TipoHabitacion tipoHabitacion, Date fechaComienzo, int cantDias) {
-		this.idReserva += 1;
+		idReserva = contador++;
 		this.cliente = cliente;
 		this.fechaComienzo = fechaComienzo;
 		this.cantDias = cantDias;
@@ -84,16 +84,21 @@ public class Reserva {
 		this.importeTotal = cantDias * (nuevaHabitacion.precio);
 		
 		// El numero de reservas por cliente incrementa
-		cliente.cantReservas =+ 1;
+		cliente.cantReservas += 1;
 		if(cliente.cantReservas > 6) {
 			this.senia = 0;
 			this.cliente.tipoCliente = TipoDeCliente.Habitual;
 		}
 		
-		System.out.print("Listo, ya creamos tu reserva. Podes realizar consultas usando el identificador de la misma: " + this.idReserva);
+		System.out.println(contador);
+		
+		// Agregamos la reserva al array
+		reservarArr[contador - 1] = this;
+		
+		System.out.println("Listo, ya creamos tu reserva. Podes realizar consultas usando el identificador de la misma: #" + this.idReserva);
 	}
 	
-	public int consultarImporteTotalReserva(int id) {
+	public static int consultarImporteTotalReserva(int id) {
 		int reservasArrLong = reservarArr.length;
 		int importe = 0;
 		
@@ -109,11 +114,9 @@ public class Reserva {
 				break;
 			}	
 		}
+		System.out.println("El importe total a pagar por su reserva (#" + id + ") es de $" + importe);
 		return importe;
 	}
-
-
-
 
 }
 
